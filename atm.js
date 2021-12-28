@@ -1,7 +1,6 @@
 let form = document.getElementById("form");
-let reset = document.getElementsById("reset");
 
-form.addEventListener("click", function returnMoney(event) {
+form.addEventListener("submit", function returnMoney(event) {
   event.preventDefault();
   process(form.valueInput.value);
 });
