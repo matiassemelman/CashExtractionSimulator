@@ -1,4 +1,5 @@
 let form = document.getElementById("form");
+let reset = document.getElementsById("reset");
 
 form.addEventListener("click", function returnMoney(event) {
   event.preventDefault();
@@ -32,8 +33,14 @@ const process = (askedValue) => {
   for (let i = 0; moneyToExtract > 0; i++) {
     let ticketsCounter = calculateTickets(moneyToExtract, tickets[i]);
     moneyToExtract -= ticketsCounter * tickets[i];
-    console.log(`${ticketsCounter} tickets of ${tickets[i]}`);
-    console.log(moneyToExtract);
+    let node = document.createElement("p");
+    let textNode = document.createTextNode(
+      `${ticketsCounter} tickets of ${tickets[i]}`
+    );
+    node.appendChild(textNode);
+    document.getElementById("mainContent").appendChild(node);
+    // console.log(`${ticketsCounter} tickets of ${tickets[i]}`);
+    // console.log(moneyToExtract);
   }
 };
 
